@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class Whatsapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,7 @@ class Whatsapp extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        backgroundColor: Colors.black,
         child: const Icon(Icons.mic),
       ),
       body: Stack(children: [
@@ -65,7 +67,7 @@ class Whatsapp extends StatelessWidget {
               )),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 30, top: 20),
+          margin: const EdgeInsets.only(left: 30, top: 35),
           alignment: AlignmentDirectional.topStart,
           child: const CircleAvatar(
             backgroundImage: AssetImage('images/person1.jpg'),
@@ -73,11 +75,53 @@ class Whatsapp extends StatelessWidget {
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 130, left: 300),
+          alignment: AlignmentDirectional.topCenter,
+          padding: const EdgeInsetsDirectional.fromSTEB(120, 45, 20, 1),
+          child: TextField(
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              hintText: 'this My First Massage',
+              hintStyle: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                wordSpacing: 5,
+                letterSpacing: 3,
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white),
+                borderRadius: BorderRadius.circular(60),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 150, left: 300),
           alignment: AlignmentDirectional.topStart,
           child: const CircleAvatar(
             backgroundImage: AssetImage('images/person2.jpg'),
             radius: 40,
+          ),
+        ),
+        Container(
+          alignment: AlignmentDirectional.topCenter,
+          padding: const EdgeInsetsDirectional.fromSTEB(5, 160, 130, 2),
+          child: TextField(
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              hintText: 'this My Secand Massage',
+              hintStyle: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                wordSpacing: 5,
+                letterSpacing: 3,
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white),
+                borderRadius: BorderRadius.circular(60),
+              ),
+            ),
           ),
         ),
         Container(
@@ -88,18 +132,22 @@ class Whatsapp extends StatelessWidget {
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(50)),
           alignment: AlignmentDirectional.bottomCenter,
-          child: const TextField(
+          child: TextField(
             decoration: InputDecoration(
               hintText: "Type Amassge",
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
               ),
-              suffixIcon: Icon(
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white),
+                borderRadius: BorderRadius.circular(60),
+              ),
+              suffixIcon: const Icon(
                 Icons.attach_file,
                 color: (Colors.white),
               ),
-              prefixIcon: Icon(
+              prefixIcon: const Icon(
                 Icons.emoji_emotions,
                 color: (Colors.white),
               ),
